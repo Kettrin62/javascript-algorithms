@@ -10,11 +10,18 @@
 */
 
 function findVowels(str) {
-    // Напишите код здесь
+  const strVow = 'аяоёуюыиэе';
+  let result = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (strVow.includes(str[i].toLowerCase())) {
+      result++;
+    };
+  };
+  return result;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-console.log(findVowels('здравствуй')); // 2
+console.log(findVowels('здрАвствуй')); // 2
 console.log(findVowels('привет')); // 2
 console.log(findVowels('хеллоу')); // 3

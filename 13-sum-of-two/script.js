@@ -9,10 +9,21 @@
 */
 
 function sumOfTwo(arr, sum) {
-    // Напишите код здесь
+  //debugger;
+  let result = false;
+  for (const elem of arr) {
+    result = arr.some((item) => {
+      return item === (sum - elem);
+    });
+    if (result === true) {
+      break;
+    };
+  }
+  return result;
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
 console.log(sumOfTwo([1, 2, 3, 4, 5], 4)); // true (так как 1 + 3 === 4)
 console.log(sumOfTwo([1, 2, 3, 4, 5], 100)); // false
+console.log(sumOfTwo([1, 2, 3, 4, 5], 4)); // true (так как 1 + 3 === 4)
